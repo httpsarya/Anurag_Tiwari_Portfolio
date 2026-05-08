@@ -91,7 +91,7 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
-        <a href="/assets/resume.pdf" download onClick={handleLinkClick}>
+        <a href={`${import.meta.env.BASE_URL}assets/resume.pdf`} download onClick={handleLinkClick}>
           Download Resume
         </a>
       </div>

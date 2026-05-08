@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import profilePic from '../assets/profile-pic.jpg';
 import '../styles/hero.css';
 
 /* Animated counter hook */
@@ -76,7 +77,7 @@ export default function Hero() {
           </div>
 
           <div className="hero-cta">
-            <a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <a href={`${import.meta.env.BASE_URL}assets/resume.pdf`} target="_blank" rel="noopener noreferrer" className="btn-primary">
               View Resume →
             </a>
             <a href="#contact" className="btn-secondary">
@@ -91,7 +92,7 @@ export default function Hero() {
             <div className="hero-corner-decorator bottom-right" />
             <div className="hero-portrait-frame">
               <img
-                src="/assets/portrait.jpg"
+                src={profilePic}
                 alt="Anurag Tiwari — HR Manager"
                 className="hero-portrait-img"
               />
