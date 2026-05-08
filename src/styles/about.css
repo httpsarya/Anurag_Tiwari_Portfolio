@@ -1,0 +1,150 @@
+/* ============================================
+   ABOUT — Professional journey
+   ============================================ */
+
+.about {
+  background: transparent;
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-subtle), transparent);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.about-text {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.about-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about-philosophy {
+  padding: var(--space-6);
+  border-left: 2px solid var(--emerald);
+  background: var(--emerald-glow);
+  margin-top: var(--space-4);
+}
+
+.about-philosophy-quote {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.about-philosophy-author {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-top: var(--space-3);
+}
+
+/* Right side — Info cards */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-info-card {
+  padding: var(--space-5);
+  background: var(--glass-bg);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  transition: all var(--transition-medium);
+}
+
+.about-info-card:hover {
+  border-color: var(--border-emerald);
+  background: var(--glass-bg-hover);
+  transform: translateX(4px);
+}
+
+.about-info-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--emerald-glow);
+  border: 1px solid var(--border-emerald);
+  flex-shrink: 0;
+  font-size: 20px;
+}
+
+.about-info-content h4 {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.about-info-content p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .about-philosophy-quote {
+    font-size: 16px;
+  }
+
+  .about-philosophy {
+    padding: var(--space-4);
+  }
+
+  .about-info-card {
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .about-info-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .about-info-content h4 {
+    font-size: 14px;
+  }
+}

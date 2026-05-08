@@ -1,0 +1,139 @@
+/* ============================================
+   EXPERTISE — Skills grid
+   ============================================ */
+
+.expertise {
+  background: transparent;
+  position: relative;
+}
+
+.expertise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 40% at 50% 0%, rgba(16, 185, 129, 0.04) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.expertise-card {
+  padding: var(--space-6);
+  background: var(--glass-bg);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.expertise-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--emerald), var(--cyan));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-medium);
+}
+
+.expertise-card:hover::before {
+  transform: scaleX(1);
+}
+
+.expertise-card:hover {
+  border-color: var(--border-emerald);
+  background: var(--glass-bg-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px var(--emerald-glow);
+}
+
+.expertise-card-number {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+}
+
+.expertise-card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: var(--emerald-glow);
+  border: 1px solid var(--border-emerald);
+  transition: all var(--transition-fast);
+}
+
+.expertise-card:hover .expertise-card-icon {
+  background: var(--emerald);
+  box-shadow: 0 0 20px var(--emerald-glow-strong);
+}
+
+.expertise-card:hover .expertise-card-icon span {
+  filter: brightness(0);
+}
+
+.expertise-card h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.expertise-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .expertise-card {
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .expertise-card h3 {
+    font-size: 14px;
+  }
+
+  .expertise-card p {
+    font-size: 12px;
+  }
+
+  .expertise-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+}
